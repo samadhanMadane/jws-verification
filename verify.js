@@ -1,7 +1,7 @@
 const jose = require('node-jose');
 const fs = require('fs');
 
-const penetolabsPublicKey = fs.readFileSync("./publickey.txt");
+const publicKey = fs.readFileSync("./publickey.txt");
 
 keystore = jose.JWK.createKeyStore();
 
@@ -12,7 +12,7 @@ const signedPayloadToVerify = {
 }
 
 // verify wih public key
-keystore.add(penetolabsPublicKey, "pem", {alg : 'RS512', kid : "ajdhcce2-7522-414d-bff7-6ecf132db345"}).
+keystore.add(publicKey, "pem", {alg : 'RS512', kid : "ajdhcce2-7522-414d-bff7-6ecf132db345"}).
 then(function(result) {
   console.log("result :: ", result);
   console.log("keystore :: ", JSON.stringify(keystore));
