@@ -12,7 +12,7 @@ const signedPayloadToVerify = {
 }
 
 // verify wih public key
-keystore.add(publicKey, "pem", {alg : 'RS512', kid : "ajdhcce2-7522-414d-bff7-6ecf132db345"}).
+keystore.add(publicKey, "pem", {alg : 'RS512', kid : "d9065520-da47-11eb-8d19-0242ac130003"}).
 then(function(result) {
   console.log("result :: ", result);
   console.log("keystore :: ", JSON.stringify(keystore));
